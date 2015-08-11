@@ -1,10 +1,17 @@
 <template name="statementItem">
   <div class="statement">
-    <div class="statement-content">
+    <div class="statement-content bs-callout 
+                {{#if userResponse}}response
+                {{#if userResponse.res}}bs-callout-success
+                {{else}}bs-callout-danger
+                {{/if}}
+                {{/if}}">
       <h6>{{text}}</h6> - <em>{{speaker}}</em>
       <div class="btn-group" role="group" aria-label="...">
+        {{#unless userResponse}}
         <button type="button" class="btn btn-success true">True</button>
         <button type="button" class="btn btn-danger false">False</button>
+        {{/unless}}
       </div>
     </div>
   </div>
