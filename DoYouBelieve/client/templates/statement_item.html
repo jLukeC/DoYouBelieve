@@ -8,10 +8,12 @@
                 {{/if}}">
       <h6>{{text}}</h6> - <em>{{speaker}}</em>
       <div class="btn-group" role="group" aria-label="...">
-        {{#unless userResponse}}
+        {{#if userResponse}}
+        <p> Answer: {{#if answer}}TRUE{{else}}FALSE{{/if}} </p>
+        {{else}}
         <button type="button" class="btn btn-success true">True</button>
         <button type="button" class="btn btn-danger false">False</button>
-        {{/unless}}
+        {{/if}}
       </div>
     </div>
   </div>
